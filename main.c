@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 13:22:23 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/25 15:41:55 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/25 18:53:58 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/25 18:54:07 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_isascii(int c)
+int	main(void)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	char	src[] = "Hello";
+	char	dest[] = "ByeBye";
+
+	ft_memmove(dest, src, 5);
+	for (int i = 0; i < 5; i++)
+		printf("%c", dest[i]);
 	return (0);
 }

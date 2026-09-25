@@ -7,9 +7,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 AR = ar rcs
 
-HEADERS = $(wildcard includes/*.h)
+HEADERS =  libft.h
 
-SOURCES = $(wildcard srcs/*.c ) 
+SOURCES = main.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+		  ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
+		  ft_memcpy.c ft_memmove.c ft_strlcpy.c
 
 OBJS = $(SOURCES:.c=.o)
 
@@ -34,7 +36,7 @@ all: $(NAME)
 # RULE: DELETE OBJECT FILES
 clean:
 	@echo "Deleting objects files (*.o)..."
-	@rm -rf $(wildcard srcs/*.o)
+	@rm -rf *.o
 
 # RULE: DELETE OBJECT FILES AND LIBRARY
 fclean: clean

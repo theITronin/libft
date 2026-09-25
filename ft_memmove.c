@@ -1,40 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 19:51:32 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/25 15:42:40 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/25 17:35:00 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/25 19:00:57 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*ptr;
+	unsigned char	*str;
+	unsigned char	*str1;
 
-	ptr = (unsigned char *)s;
-	while (n > 0)
+	str = (unsigned char *)src;
+	str1 = (unsigned char *)dest;
+	if (dest > src)
 	{
-		*ptr = (unsigned char)c;
-		ptr++;
-		n--;
+		str = str + n -1;
+		str1 = str1 + n -1;
+		while (n > 0)
+		{
+			*str1 = *str;
+			str--;
+			str1--;
+			n--;
+		}
 	}
-	return (s);
+	else
+		ft_memcpy(dest, src, n);
+	return (dest);
 }
-
 /*
 #include <stdio.h>
+
 int	main(void)
 {
-	int	c[4] = {2, 2, 2, 2};
-	ft_memset(c, 255, sizeof(c));
-	for (int i = 0; i <= 3; i++)
-	{
-		printf("%d", (unsigned char)c[i]);
-	}
+	char	src[] = "Hello";
+	char	dest[] = "ByeBye";
+
+	ft_memmove(dest, src, 5);
+	for (int i = 0; i < 5; i++)
+		printf("%c", dest[i]);
+	return (0);
 }
 */

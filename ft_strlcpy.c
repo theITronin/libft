@@ -1,20 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 13:22:23 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/25 15:41:55 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/25 19:25:18 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/25 20:12:31 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (src[i] != '\0')
+		i++;
+	if (size == 0)
+		return (i);
+	while (j < size - 1 && src[j] != '\0')
+	{
+		dst[j] = src[j];
+		j++;
+	}
+	dst[j] = '\0';
+	return (i);
+}
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char	a[] = "hola mundo";
+
+	ft_strlcpy(a, "hello world", 7);
+	printf("%s", a);
 	return (0);
 }
+*/

@@ -1,20 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 13:22:23 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/25 15:41:55 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/25 15:48:25 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/25 17:28:46 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	unsigned char	*str;
+
+	str = (unsigned char *)s;
+	while (n > 0)
+	{
+		*str = '\0';
+		str++;
+		n--;
+	}
+}
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char	c[] = "Hello";
+
+	ft_bzero(c, 4);
+	for(int	i = 0; i < 4; i++)
+		printf("%d", c[i]);
 	return (0);
 }
+*/
