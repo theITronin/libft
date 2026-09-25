@@ -14,27 +14,27 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char	*ptr;
+	unsigned char	*ptr;
 
-	ptr = s;
+	ptr = (unsigned char *)s;
 	while (n > 0)
 	{
-		*ptr = c;
+		*ptr = (unsigned char)c;
 		ptr++;
 		n--;		
 	}
 	return (s);
 }
 
-
+/*
 #include <stdio.h>
 int	main(void)
 {
-	unsigned char c[4] = {2, 2, 2, 2};
-	ft_memset(c, 254, sizeof(c));
+	int	c[4] = {2, 2, 2, 2};
+	ft_memset(c, 255, sizeof(c));
 	for (int i = 0; i <= 3; i++)
 	{
-		printf("%d", c[i]);
+		printf("%d", (unsigned char)c[i]);
 	}
 }
-
+*/
