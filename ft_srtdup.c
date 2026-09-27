@@ -6,13 +6,13 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 11:36:18 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/27 11:40:33 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/09/27 11:43:32 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strdup(const char *src)
+char	*ft_strdup(const char *src)
 {
         int             i;
         char    *dest;
