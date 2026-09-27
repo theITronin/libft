@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 18:44:02 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/26 18:49:24 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/26 18:15:24 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/26 19:25:23 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_toupper(int c)
 {
-	size_t	byte;
-
-	byte = 0;
-	while (*s != '\0')
-		byte++;
-	return (byte);
+	if (c >= 97 && c <= 122)
+		c = c - 32;
+	return (c);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%c", ft_toupper('p'));
+	return (0);
+}
+*/

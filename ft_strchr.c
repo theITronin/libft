@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 18:44:02 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/26 18:49:24 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/26 19:34:53 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/26 20:17:33 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	byte;
-
-	byte = 0;
 	while (*s != '\0')
-		byte++;
-	return (byte);
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == c)
+		return ((char *)s);
+	return (NULL);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%s", ft_strchr("hola mundo", '\0'));	
+	return (0);
+}
+*/

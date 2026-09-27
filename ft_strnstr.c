@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/25 15:48:25 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/27 11:25:18 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/27 02:19:59 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/27 09:55:17 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	ft_memset(s, 0, n);
+	size_t	i;
+	size_t	j;
+
+	if (!*little)
+		return ((char *)big);
+	i = 0;
+	while (big[i] != '\0' && i < len)
+	{
+		j = 0;
+		while (big[i + j] == little[j] && (i + j) < len && little[j])
+			j++;
+		if (!little[j])
+			return ((char *)&big[i]);
+		i++;
+	}
+	return (NULL);
 }
 /*
 #include <stdio.h>
+
 int	main(void)
 {
-	char	c[] = "Hello";
-
-	ft_bzero(c, 4);
-	for(int	i = 0; i < 4; i++)
-		printf("%d", c[i]);
+	printf("%s", ft_strnstr("holarh", "ola", 6));
 	return (0);
 }
 */
