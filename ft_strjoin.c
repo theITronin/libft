@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/25 19:25:18 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/28 18:21:00 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/28 17:53:11 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/28 18:19:56 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char *ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	s1_len;
+	size_t	s2_len;
 	size_t	i;
-	size_t	j;
+	char	*str;
 
-	j = 0;
-	i = ft_strlen(src);
-	if (size == 0)
-		return (i);
-	while (j < size - 1 && src[j] != '\0')
-	{
-		dst[j] = src[j];
-		j++;
-	}
-	dst[j] = '\0';
-	return (i);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = malloc((s1_len + s2_len) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = ft_strlcpy(str, s1, s1_len + 1);
+	ft_strlcpy(&str[i], s2, s2_len + 1);
+	return (str);
 }
+
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char	a[] = "hola mundo";
-
-	printf("%zu : %s", ft_strlcpy(a, "hello world", 5), a);
+	printf("%s", ft_strjoin("Hola ", "Mundo"));
 	return (0);
 }
 */
-

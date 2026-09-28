@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/25 19:25:18 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/28 18:21:00 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/28 15:51:36 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/28 17:50:59 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	char	*subs;
+	size_t	s_len;
 
-	j = 0;
-	i = ft_strlen(src);
-	if (size == 0)
-		return (i);
-	while (j < size - 1 && src[j] != '\0')
-	{
-		dst[j] = src[j];
-		j++;
-	}
-	dst[j] = '\0';
-	return (i);
+	s_len = ft_strlen(s);
+	if (s_len <= start)
+		return (subs = '\0');
+	if (s_len <= start + (unsigned int)len)
+		len = s_len - start;
+	subs = malloc((len + 1) * sizeof(char));
+	if (!subs)
+		return (NULL);
+	ft_strlcpy(subs, &s[start], len);
+	subs[start + len] = '\0';
+	return (subs);
 }
 /*
 #include <stdio.h>
+
 int	main(void)
 {
-	char	a[] = "hola mundo";
-
-	printf("%zu : %s", ft_strlcpy(a, "hello world", 5), a);
+	printf("%s", ft_substr("Hola Mundo", 2, 5));
 	return (0);
 }
 */
-

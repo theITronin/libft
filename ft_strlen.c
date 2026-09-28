@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 18:44:02 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/26 18:49:24 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/09/28 17:41:27 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ size_t	ft_strlen(const char *s)
 
 	byte = 0;
 	while (*s != '\0')
+	{
 		byte++;
+		s++;
+	}
 	return (byte);
 }
