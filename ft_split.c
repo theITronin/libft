@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/25 19:25:18 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/29 19:35:18 by dbustama         ###   ########.fr       */
+/*   Created: 2026/09/29 18:13:33 by dbustama          #+#    #+#             */
+/*   Updated: 2026/09/29 20:17:37 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	count_words(char const *s, char c)
 {
 	size_t	i;
-	size_t	j;
+	int	words;
 
-	j = 0;
-	i = ft_strlen(src);
-	if (size == 0)
-		return (i);
-	while (j < size - 1 && src[j] != '\0')
+	i = 0;
+	words = 0;
+
+	while (s[i] != '\0')
 	{
-		dst[j] = src[j];
-		j++;
+		i++;
+		if (s[i - 1] ==  c && s[i] != c)
+			words++;
 	}
-	dst[j] = '\0';
-	return (i);
+
 }
-/*
-#include <stdio.h>
-int	main(void)
+
+char	**ft_split(char const *s, char c)
 {
-	char	a[] = "hola mundo";
+	char	**array;
 
-	printf("%zu : %s", ft_strlcpy(a, "hello world", 5), a);
-	return (0);
+	count_words(s, c);
 }
-*/
-
-

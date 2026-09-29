@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 17:35:00 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/25 19:00:57 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/09/29 18:47:45 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
@@ -46,6 +46,7 @@ int	main(void)
 	ft_memmove(dest, src, 5);
 	for (int i = 0; i < 5; i++)
 		printf("%c", dest[i]);
+
 	return (0);
 }
-*/
+
