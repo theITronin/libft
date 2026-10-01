@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 18:13:33 by dbustama          #+#    #+#             */
-/*   Updated: 2026/10/01 19:02:52 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/01 20:45:58 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static int	count_words(char const *s, char c)
 
 	i = 1;
 	words = 0;
-	if (s[0] != c)
+	if (s[0] != c && s[0])
 		words++;
-	while (s[i] != '\0')
+	while (s[i] && s[0])
 	{
 		if (s[i - 1] == c && s[i] != c)
 			words++;
@@ -42,7 +42,7 @@ static int	count_words(char const *s, char c)
 	return (words);
 }
 
-static void	find_words(char const *s, char **array, char c)
+static void	find_words(char const *s, char **array, char c, size_t words)
 {
 	size_t	i;
 	size_t	start;
@@ -50,13 +50,12 @@ static void	find_words(char const *s, char **array, char c)
 
 	words_filled = 0;
 	i = 0;
-	while (s[i] != '\0')
+	while (words_filled < words && s[i])
 	{
-		start = 0;
 		start = i;
-		while (s[i] != '\0' && s[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
-		if (s[start] != c)
+		if (s[start] != c && s[start])
 		{
 			*array = ft_substr(s, start, i - start);
 			if (!*array)
@@ -77,7 +76,10 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	words = count_words(s, c);
 	array = malloc((words + 1) * sizeof(char *));
-	find_words(s, array, c);
+	if (!array)
+		return (NULL);
+	find_words(s, array, c, words);
+	array[words] = NULL;
 	return (array);
 }
 
@@ -88,13 +90,12 @@ int	main(void)
 	int		words;
 	char	**array;
 
-	words = count_words(" Hola      que tal estas ", ' ');
+	words = count_words("\0aa\0bbb", '\0');
 	printf("%d\n", words);
-	array = ft_split(" Hola      que tal estas ", ' ');
+	array = ft_split("\0aa\0bbb", '\0');
 	for(int	i = 0; i < words; i++)
 	{
 		printf("%s\n", array[i]);
 	}
 	return (0);
-}
-*/
+}*/
