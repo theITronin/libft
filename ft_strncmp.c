@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 23:31:43 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/26 23:40:22 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/09/30 19:54:06 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	while (i < n - 1 && s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
 		i++;
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
 /*
 #include <stdio.h>
-
 int	main(void)
 {
 	printf("%d", ft_strncmp("ABCD", "ABDZ", 3));

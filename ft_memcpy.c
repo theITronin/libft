@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 16:48:47 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/25 19:00:34 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/09/30 18:46:22 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*str;
 	unsigned char	*str1;
 
+	if (!dest && !src)
+		return (NULL);
 	str = (unsigned char *)src;
 	str1 = (unsigned char *)dest;
 	while (n > 0)

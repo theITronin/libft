@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 17:35:00 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/29 18:47:45 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/09/30 18:22:38 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
-
+/*
 #include <stdio.h>
-
 int	main(void)
 {
 	char	src[] = "Hello";
@@ -49,4 +48,4 @@ int	main(void)
 
 	return (0);
 }
-
+*/

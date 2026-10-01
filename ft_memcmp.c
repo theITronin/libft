@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 00:17:23 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/27 00:25:16 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/09/30 20:15:06 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (i < n - 1 && p1[i] != '\0' && p2[i] != '\0' && p1[i] == p2[i])
+	while (i < n - 1 && p1[i] == p2[i])
 		i++;
 	return (p1[i] - p2[i]);
 }

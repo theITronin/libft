@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 11:12:46 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/27 11:36:06 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/01 18:56:45 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,18 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (!nmemb || !size)
-		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+	printf("%s", (char *)ft_calloc(5, 0));
+	return (0);
+}
+*/
