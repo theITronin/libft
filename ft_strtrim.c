@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 18:23:42 by dbustama          #+#    #+#             */
-/*   Updated: 2026/10/01 18:51:24 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/03 09:21:59 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = p_start(s1, set);
 	end = p_end(s1, set);
-	if (start >= end)
+	if (start > end)
 		return (ft_strdup(""));
 	return (ft_substr(s1, start, (end - start + 1)));
 }
+
 /*
 #include <stdio.h>
 int	main(void)
@@ -74,6 +75,7 @@ int	main(void)
 	printf("%s\n", ft_strtrim("Hola Mundo", "Hod"));
 	printf("%s\n", ft_strtrim("pqr", "Hod"));
 	printf("%s\n", ft_strtrim("Hod", "Hod"));
+	printf("%s\n", ft_strtrim("abcdba", "acb"));
 	return (0);
 }
 */

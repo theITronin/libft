@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 11:36:18 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/28 17:50:12 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/03 09:11:11 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *src)
 	char	*dest;
 
 	i = 0;
-	dest = (char *)malloc((ft_strlen(src) + 1) * sizeof(char) + 1);
+	dest = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (dest == NULL)
 		return (NULL);
 	while (src[i] != '\0')
