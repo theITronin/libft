@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 18:13:33 by dbustama          #+#    #+#             */
-/*   Updated: 2026/10/01 20:45:58 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/04 17:12:06 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ static void	find_words(char const *s, char **array, char c, size_t words)
 	i = 0;
 	while (words_filled < words && s[i])
 	{
+		while (s[i] && s[i] == c)
+			i++;
 		start = i;
 		while (s[i] && s[i] != c)
 			i++;
@@ -63,7 +65,6 @@ static void	find_words(char const *s, char **array, char c, size_t words)
 			words_filled++;
 			array++;
 		}
-		i++;
 	}
 }
 
@@ -90,12 +91,13 @@ int	main(void)
 	int		words;
 	char	**array;
 
-	words = count_words("\0aa\0bbb", '\0');
+	words = count_words("hello!", ' ');
 	printf("%d\n", words);
-	array = ft_split("\0aa\0bbb", '\0');
+	array = ft_split("hello!", ' ');
 	for(int	i = 0; i < words; i++)
 	{
 		printf("%s\n", array[i]);
 	}
 	return (0);
-}*/
+}
+*/

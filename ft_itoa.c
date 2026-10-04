@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 18:37:43 by dbustama          #+#    #+#             */
-/*   Updated: 2026/10/03 02:13:52 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/04 16:25:03 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_itoa(int n)
 
 	n1 = n;
 	len = 0;
+	if (n == 0)
+		len = 1;
 	while (n != 0)
 	{
 		len++;
@@ -41,7 +43,7 @@ char	*ft_itoa(int n)
 	if (n1 < 0)
 		str[0] = '-';
 	str_func(n1 * ((n1 > 0) - (n1 < 0)), len, str + (n1 < 0));
-	str[len + 1] = '\0';
+	str[len + (n1 < 0)] = '\0';
 	return (str);
 }
 
