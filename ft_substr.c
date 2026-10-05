@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 15:51:36 by dbustama          #+#    #+#             */
-/*   Updated: 2026/09/29 19:27:32 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/05 16:17:15 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!subs)
 		return (NULL);
 	ft_strlcpy(subs, &s[start], len + 1);
-	subs[start + len] = '\0';
 	return (subs);
 }
 
