@@ -6,7 +6,7 @@
 /*   By: dbustama <dbustama@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 15:43:18 by dbustama          #+#    #+#             */
-/*   Updated: 2026/10/05 18:15:36 by dbustama         ###   ########.fr       */
+/*   Updated: 2026/10/06 17:26:48 by dbustama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ char			**ft_split(char const *s, char c);
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-				void (*del)(void *));
+					void (*del)(void *));
 
 #endif
