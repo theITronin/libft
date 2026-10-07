@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by <dbustama>*
+*This project has been created as part of the 42 curriculum by dbustama*
 
 # Libft
 
